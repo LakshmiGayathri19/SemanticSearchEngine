@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+</style>
+<title>
+Home Page
+</title>
+</head>
+<body>
+
+<h2>Semantic Search Engine</h2>
+
+<p>Search for the relevant text document:</p>
+<form class="example" action="{{ url_for('views.home')}}" method="post">
+
+{% if query %}
+  <input type="text" value="{{query}}" placeholder="Search.." name="query">
+  {% else %}
+  <input type="text" placeholder="Search.." name="query">
+{% endif %}
+  
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+{% if query %}
+
+<h2>Search Results</h2>
+
+{% for item in document_texts %}
+        <div class="card">
+  		<p>{{item[0]}} </p>
+  		<div class="container">
+    			<h4><b>Match Score</b></h4> 
+    			<p>{{item[1]}}</p> 
+  		</div>
+	</div>
+{% endfor %}
+
+{% endif %}
+
+
+</body>
+</html> 
