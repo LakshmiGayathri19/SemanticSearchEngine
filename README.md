@@ -9,13 +9,21 @@ When the application issues a query, the search engine use the same embedding mo
 
 Step 1) Create a [python virtual environment](https://docs.python.org/3/library/venv.html) in your project folder. 
 
-Step 2) Install the required libraries. Run the below commands to install the required libraries.
+Step 2) Install the required libraries. You can either follow Option-A or Option-B.
 
 **Note:** It is assumed that python is already installed in your virtual environment.
+
+*Option-A*
 
 * `pip install pinecone-client` -> This installs `pinecone` client which is a vector database.
 * `pip install sentence-transformers` -> This installs a python [framework](https://www.sbert.net/) which is used to encode text documents and produce embeddings.
 * `pip install flask` -> This command installs a lightweight [web application framework](https://pypi.org/project/Flask/).
+
+Or
+
+*Option-B*
+
+* `requirements.txt` can be executed directly with the command `pip install -r requirements.txt`.
 
 Step 3) 
 * Download the `Data` folder. After the data folder is downloaded, replace the folder name at this [line](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/5eafae6d05b62682d4d9c3d2ad4446d628af90c7/application_code.py#L23) in `application_code.py`.
