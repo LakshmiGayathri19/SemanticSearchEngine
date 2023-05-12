@@ -31,7 +31,8 @@ Step 4) Run the `setup.py` file using the command `python setup.py`. `Setup.py` 
 5) Each document text read in the step 4 are converted into embeddings using the model created in the step 1. The craeted embeddings along with the metadata is inserted into the vector database index created in step 3.
 
 After successfully cpompleting the above mentioned steps, the database is ready with all the document which can be queried by the user. Now in order to start the website run `python app.py`. This will start a local webserver at `port 8000`. The website looks like the below attached picture.
-![searchEngine](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/main/SearchEngine.png).
+
+![searchEngine](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/main/SearchEngine.png)
 
 
 The resutls of the input query are shown in the cards along with the score of how accurately the document text matched with the input query. Currently the website returns five relevant text documents. We can customise this by chaning the value of `top_k` at this [line](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/main/query.py#L13).
