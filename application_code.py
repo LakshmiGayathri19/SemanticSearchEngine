@@ -61,10 +61,11 @@ class semantic_search:
 	Uses the sequence_transformer model to generate encodings of the documents and inserts the encodings along with the metadata into 		the vector database.
 	'''	
 	def insert_encodings(self, documents, model):
-		#Connecting to index
+		# Connecting to index
 		index = pinecone.Index(self.index_name)
 		records = []
 		for i in tqdm(range(0, len(documents))):
+			# create metadata
 			metadata = {'text': documents[i]}
 			# create embeddings
 			xc = model.encode(documents[i])
