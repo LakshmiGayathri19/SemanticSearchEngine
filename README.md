@@ -48,7 +48,7 @@ For example: The entry to the vector database will be of the form:
 }
 ```
 
-After successfully cpompleting the above mentioned steps, the database is ready with all the document which can be queried by the user. Now in order to start the website run `python app.py`. This will start a local webserver at `port 8000`. The website looks like the below attached picture.
+After successfully cpompleting the above mentioned steps, the database is ready with all the document which can be queried by the user. Now in order to start the website run `python app.py`. This will start a local webserver at `port 8000`. The URL at which the website will be up is "https://127.0.0.1:8000/". Please note that the URL should be appended with `views/` in order view the search engine page. After appending `views/` the URL for the search engine will be "https://127.0.0.1:8000/views/". The website looks like the below attached picture.
 
 ![searchEngine](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/main/SearchEngine.png)
 
