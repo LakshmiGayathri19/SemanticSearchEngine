@@ -36,7 +36,17 @@ Step 4) Run the `setup.py` file using the command `python setup.py`. `Setup.py` 
 2) The pinecone is initialised.
 3) With the help of the model created in the above step, a index is initialized in the pinecone.
 4) Documents which are to be added to the vector database are read and the text is stored in the list named `documents`.
-5) Each document text read in the step 4 are converted into embeddings using the model created in the step 1. The craeted embeddings along with the metadata is inserted into the vector database index created in step 3.
+5) Each document text read in the step 4 are converted into embeddings using the model created in the step 1. The created embeddings along with the metadata(creation of metadata can be found [here](https://github.com/LakshmiGayathri19/SemanticSearchEngine/blob/main/application_code.py#L68)) is inserted into the vector database index created in step 3.
+
+For example: The entry to the vector database will be of the form:
+```
+{
+    'id': '99',
+    'metadata': {'text': 'Day-Lewis set for Berlin honour....'},
+    'score': 0.549687684,
+    'value': [0.027540016919374466, -0.04051943123340607, -0.03708145394921303,...] #embeddings
+}
+```
 
 After successfully cpompleting the above mentioned steps, the database is ready with all the document which can be queried by the user. Now in order to start the website run `python app.py`. This will start a local webserver at `port 8000`. The website looks like the below attached picture.
 
